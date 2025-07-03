@@ -7,9 +7,6 @@ project_description:
   type: str
   help: A brief one-line description of the project.
 
-# This creates a variable for the folder name
-_project_name_slug: "{{ project_name | lower | replace(' ', '_') }}"
-
 # This tells copier to rename our placeholder folder after generation
 _tasks:
-  - "mv src/project_name_placeholder src/{{ _project_name_slug }}"
+  - "mv src/project_name_placeholder src/{{ project_name | lower | replace(' ', '_') }}"
